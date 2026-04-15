@@ -313,14 +313,14 @@
 <div id="game-screen">
   <div class="game-header">
     <div class="game-title">SNAKE</div>
-    <div class="game-score">очки: <span id="scoreDisp">0</span></div>
+    <div class="game-score">Punkte: <span id="scoreDisp">0</span></div>
     <!-- Back button: tap to return to calculator -->
-    <button class="back-btn" id="backBtn" onclick="goToCalc()">← закрыть</button>
+    <button class="back-btn" id="backBtn" onclick="goToCalc()">← Close</button>
   </div>
 
   <div id="game-canvas-wrap">
     <canvas id="gameCanvas"></canvas>
-    <div class="swipe-hint">свайп или кнопки для управления</div>
+    <div class="swipe-hint">Swipe zum Bewegen</div>
     <div class="game-controls">
       <button class="d-btn up"    onclick="setDir(0,-1)">↑</button>
       <button class="d-btn left"  onclick="setDir(-1,0)">←</button>
@@ -329,11 +329,11 @@
     </div>
   </div>
 
-  <div class="game-overlay-wrap" id="gameOverlayWrap">
+  <div class="game-overlay-wrap active" id="gameOverlayWrap">
     <div class="overlay show" id="gameOverlay">
       <div class="overlay-text">SNAKE</div>
-      <div class="overlay-sub">классика</div>
-      <button class="play-btn" onclick="startGame()">ИГРАТЬ</button>
+      <div class="overlay-sub">Classic</div>
+      <button class="play-btn" onclick="startGame()">PLAY</button>
     </div>
   </div>
 </div>
@@ -418,7 +418,7 @@ function calcEqual(chain) {
   if (calcState.op === '+') r = a + b;
   else if (calcState.op === '−') r = a - b;
   else if (calcState.op === '×') r = a * b;
-  else if (calcState.op === '÷') r = b === 0 ? 'Ошибка' : a / b;
+  else if (calcState.op === '÷') r = b === 0 ? 'Error' : a / b;
   const rs = typeof r === 'number' ? ('' + parseFloat(r.toFixed(10))) : r;
   if (!chain) {
     document.getElementById('history').textContent = calcState.prev + ' ' + calcState.op + ' ' + calcState.value + ' =';
